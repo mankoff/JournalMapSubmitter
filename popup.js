@@ -1,10 +1,12 @@
+
 // This callback function is called when the content script has been 
 // injected and returned its results
 function onPageDetailsReceived(pageDetails)  { 
     document.getElementById('title').value = pageDetails.title; 
-    document.getElementById('url').value = pageDetails.url; 
-    document.getElementById('summary').innerText = pageDetails.summary; 
+    // document.getElementById('url').value = pageDetails.url; 
+    // document.getElementById('summary').innerText = pageDetails.summary; 
 } 
+
 
 // Global reference to the status display SPAN
 var statusDisplay = null;
@@ -64,7 +66,7 @@ window.addEventListener('load', function(evt) {
     // Cache a reference to the status display SPAN
     statusDisplay = document.getElementById('status-display');
     // Handle the bookmark form submit event with our addBookmark function
-    document.getElementById('addbookmark').addEventListener('submit', addBookmark);
+    document.getElementById('submit_to_journalmap').addEventListener('submit', addBookmark);
     // Get the event page
     chrome.runtime.getBackgroundPage(function(eventPage) {
         // Call the getPageInfo function in the event page, passing in 

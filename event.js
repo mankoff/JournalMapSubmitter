@@ -1,3 +1,4 @@
+
 // This function is called onload in the popup code
 function getPageDetails(callback) { 
     // Inject the content script into the current page 
@@ -8,3 +9,31 @@ function getPageDetails(callback) {
         callback(message); 
     }); 
 }; 
+
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        // read `newIconPath` from request and read `tab.id` from sender
+
+	chrome.browserAction.setBadgeText({
+	    text: "DOI",
+	    tabId: sender.tab.id
+	});
+	
+	chrome.browserAction.setBadgeBackgroundColor({
+	    color: [255,0,0],
+	    tabId: sender.tab.id
+	});
+	
+        // chrome.browserAction.setIcon({
+        //     path: request.newIconPath,
+        //     tabId: sender.tab.id
+        // });
+
+	// chrome.browserAction.setTitle({
+	//     default_title: request.setTitle,
+	//     tabId: sender.tab.id
+	// });
+
+    });
+
