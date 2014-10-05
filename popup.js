@@ -5,7 +5,12 @@ function onPageDetailsReceived(pageDetails)  {
     document.getElementById('title').value = pageDetails.title; 
     // document.getElementById('url').value = pageDetails.url; 
     // document.getElementById('summary').innerText = pageDetails.summary; 
+
+    // var DOI = getPubDetails();
+    document.getElementById('DOI').value = pageDetails.DOI;
 } 
+
+
 
 
 // Global reference to the status display SPAN
@@ -60,6 +65,7 @@ function addBookmark() {
     xhr.send(params);
     statusDisplay.innerHTML = 'Saving...';
 }
+
 
 // When the popup HTML has loaded
 window.addEventListener('load', function(evt) {

@@ -25,15 +25,5 @@ chrome.runtime.onMessage.addListener(
 	    tabId: sender.tab.id
 	});
 	
-        // chrome.browserAction.setIcon({
-        //     path: request.newIconPath,
-        //     tabId: sender.tab.id
-        // });
-
-	// chrome.browserAction.setTitle({
-	//     default_title: request.setTitle,
-	//     tabId: sender.tab.id
-	// });
-
     });
 
