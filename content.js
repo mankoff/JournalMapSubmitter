@@ -2,12 +2,31 @@
 
 var DOI = fetchDOI();
 
+var pub_meta = fetchMeta(DOI);
+
 chrome.runtime.sendMessage({
     'title': document.title,
     'DOI': DOI
     //'url': window.location.href,
     //'summary': window.getSelection().toString()
 });
+
+
+
+function fetchMeta(DOI)
+{
+    url = "http://dx.doi.org/" + DOI
+
+//    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://google.com') + '&callback=?', function(data){
+//	alert(data.contents);
+//    });
+
+//    headers = {"accept": "application/x-bibtex"}
+//   r = requests.get(url, headers = headers, timeout=3)
+//   print r.text
+// return r.text
+}
+
 
 
 
@@ -54,11 +73,8 @@ function handleText(textNode)
 
     if (re.test(str)) {
 	var m = str.match(regex);
-	console.log(m);
+	//console.log(m);
 	return m[1];
-	//alert(str);
-	//console.log(str);
-	//return str;
     }
 }
 
