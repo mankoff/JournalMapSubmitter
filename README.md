@@ -1,1 +1,1 @@
-Example code for my article on building a simple Google Chrome extension.
+First prototype of a Chrome plugin to submit DOIs to JournalMap
